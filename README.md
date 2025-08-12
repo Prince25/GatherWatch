@@ -4,10 +4,7 @@
 
 A social movie night scheduler with real-time watch party experience. Create rooms, vote on movies, and enjoy synchronized viewing with friends from anywhere in the world.
 
-![Next.js](https://img.shields.io/badge/Next.js-15-black)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.6-blue)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-06B6D4)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Latest-336791)
+
 
 ## Features
 
@@ -39,28 +36,31 @@ A social movie night scheduler with real-time watch party experience. Create roo
 - Dark/light mode support
 - Mobile-optimized experience
 
-## Tech Stack
 
-- **Frontend**: Next.js 15 (App Router), React 18, TypeScript
-- **Styling**: Tailwind CSS, shadcn/ui components
-- **Database**: Supabase (PostgreSQL) with auto-generated types
-- **Authentication**: Supabase Auth with Email/Password & Google OAuth
+
+## Technologies
+
+- **Frontend**: [Next.js 15 (App Router)](https://nextjs.org/), [React 18](https://react.dev/), [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/), [shadcn/ui components](https://ui.shadcn.com/)
+- **Database**: [Supabase (PostgreSQL)](https://supabase.com/) with auto-generated types
+- **Authentication**: [Supabase Auth](https://supabase.com/docs/guides/auth) with Email/Password & Google OAuth
 - **Real-time**: 
-  - Supabase Realtime for database changes
-  - Ably for complex real-time features (chat, player sync)
-- **File Storage**: Supabase Storage with CDN
-- **State Management**: Zustand for client-side state
-- **Movie Data**: The Movie Database (TMDB) API
-- **AI Features**: OpenAI API (optional)
-- **Development**: Optimized for cloud-first development
+   - [Supabase Realtime](https://supabase.com/docs/guides/realtime) for database changes
+   - [Ably](https://ably.com/) for complex real-time features (chat, player sync)
+- **File Storage**: [Supabase Storage](https://supabase.com/docs/guides/storage) with CDN
+- **State Management**: [Zustand](https://zustand-demo.pmnd.rs/) for client-side state
+- **Movie Data**: [The Movie Database (TMDB) API](https://www.themoviedb.org/documentation/api)
+- **AI Features**: [OpenAI API](https://platform.openai.com/docs/) (optional)
+
+
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js 18 or later
+- Node.js 22 or later
 - Supabase account
-- Ably account (for real-time features)
+- Ably account
 - TMDB API key
 - Google OAuth credentials (optional)
 - OpenAI API key (optional)
@@ -134,6 +134,8 @@ A social movie night scheduler with real-time watch party experience. Create roo
 
    Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+
+
 ## Setup Requirements
 
 ### Supabase Setup
@@ -161,6 +163,8 @@ A social movie night scheduler with real-time watch party experience. Create roo
 4. Add redirect URIs: `http://localhost:3000/auth/callback` (dev), `https://yourdomain.com/auth/callback` (prod)
 5. Add client ID and secret to both `.env` and Supabase Auth settings
 
+
+
 ## Architecture
 
 ### State Management
@@ -179,6 +183,8 @@ A social movie night scheduler with real-time watch party experience. Create roo
 - **Supabase PostgreSQL** with Row Level Security (RLS)
 - Auto-generated TypeScript types
 - Real-time subscriptions for instant UI updates
+
+
 
 ## Project Structure
 
@@ -241,6 +247,8 @@ gatherwatch/
 └── tsconfig.json         # TypeScript configuration
 ```
 
+
+
 ## Available Scripts
 
 - `npm run dev` - Start development server
@@ -253,6 +261,8 @@ gatherwatch/
 - `npm run db:types` - Generate TypeScript types from Supabase
 - `npm run db:reset` - Reset Supabase database
 - `npm run db:seed` - Seed database with demo data
+
+
 
 ## Usage
 
@@ -283,6 +293,8 @@ The app supports:
 3. Use the sync controls to keep everyone together
 4. Enjoy live chat and reactions during the movie
 
+
+
 ## Database Schema
 
 The application uses PostgreSQL with the following main entities:
@@ -295,6 +307,8 @@ The application uses PostgreSQL with the following main entities:
 - **WatchEvents** - Scheduled watch parties
 - **ChatMessages** - Real-time chat messages
 - **Reactions** - User reactions during watch parties
+
+
 
 ## API Endpoints
 
@@ -318,6 +332,8 @@ The application uses PostgreSQL with the following main entities:
 - `GET /api/events/[id]` - Get event details
 - `PUT /api/events/[id]/sync` - Update sync status
 
+
+
 ## Customization
 
 ### Theming
@@ -338,6 +354,8 @@ The app uses CSS variables for theming. Modify `app/globals.css` to customize co
 2. Add environment variables
 3. Update the sign-in page UI
 
+
+
 ## Deployment
 
 ### Vercel (Recommended)
@@ -354,18 +372,11 @@ The app can be deployed on any platform supporting Node.js:
 2. Set production environment variables
 3. Start the server: `npm start`
 
+
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Technologies
-
-- [Next.js](https://nextjs.org/) for the amazing React framework
-- [Tailwind CSS](https://tailwindcss.com/) for utility-first styling
-- [shadcn/ui](https://ui.shadcn.com/) for beautiful components
-- [The Movie Database](https://www.themoviedb.org/) for movie data
-- [Socket.IO](https://socket.io/) for real-time functionality
-- [Prisma](https://www.prisma.io/) for database management
 
 ---
 

@@ -203,8 +203,7 @@ gatherwatch/
 │   ├── watch/             # Watch party interface
 │   ├── globals.css        # Global styles
 │   ├── layout.tsx         # Root layout
-│   ├── page.tsx           # Homepage
-│   └── providers.tsx      # App providers
+│   └── page.tsx           # Homepage
 ├── components/            # Reusable components
 │   ├── auth/             # Auth components
 │   │   └── signin-form.tsx # Sign-in form component
@@ -312,9 +311,6 @@ The application uses PostgreSQL with the following main entities:
 
 ## API Endpoints
 
-### Authentication
-- `GET/POST /api/auth/*` - NextAuth.js endpoints
-
 ### Rooms
 - `GET /api/rooms` - List user's rooms
 - `POST /api/rooms` - Create new room
@@ -350,7 +346,7 @@ The app uses CSS variables for theming. Modify `app/globals.css` to customize co
 
 ### Adding New OAuth Providers
 
-1. Add provider configuration in `lib/auth.ts`
+1. Add provider configuration in Supabase Dashboard
 2. Add environment variables
 3. Update the sign-in page UI
 

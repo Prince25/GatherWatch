@@ -11,7 +11,7 @@ export default function HomePage() {
         <nav className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <Film className="h-8 w-8 text-blue-600" />
-            <h1 className="text-2xl font-bold text-gray-900">GatherWatch</h1>
+            <h1 className="text-2xl font-bold text-gray-900">Gather&Watch</h1>
           </div>
           <div className="flex items-center space-x-4">
             <Link href="/rooms">
@@ -105,7 +105,7 @@ export default function HomePage() {
         <div className="text-center bg-blue-600 text-white rounded-2xl p-12">
           <h3 className="text-3xl font-bold mb-4">Ready to Start Watching Together?</h3>
           <p className="text-xl mb-8 text-blue-100">
-            Join thousands of movie lovers who have made movie nights better with GatherWatch.
+            Join thousands of movie lovers who have made movie nights better with Gather&Watch.
           </p>
           <Link href="/auth/signin">
             <Button size="lg" variant="secondary" className="text-lg px-8">
@@ -118,7 +118,7 @@ export default function HomePage() {
       {/* Footer */}
       <footer className="container mx-auto px-4 py-8 mt-16 border-t border-gray-200">
         <div className="text-center text-gray-600">
-          <p>&copy; 2024 GatherWatch. Made with ❤️ for movie lovers everywhere.</p>
+          <p>&copy; 2024 Gather&Watch. Made with ❤️ for movie lovers everywhere.</p>
         </div>
       </footer>
     </div>

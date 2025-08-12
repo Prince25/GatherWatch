@@ -77,7 +77,7 @@ export default function SignUpPage() {
             className="inline-flex items-center space-x-2 text-2xl font-bold text-gray-900"
           >
             <Film className="h-8 w-8 text-blue-600" />
-            <span>GatherWatch</span>
+            <span>Gather&Watch</span>
           </Link>
         </div>
 
@@ -85,7 +85,7 @@ export default function SignUpPage() {
         <Card>
           <CardHeader className="text-center">
             <CardTitle>Create Account</CardTitle>
-            <CardDescription>Join GatherWatch and start watching with friends</CardDescription>
+            <CardDescription>Join Gather&Watch and start watching with friends</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             {error && (

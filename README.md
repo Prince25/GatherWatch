@@ -1,4 +1,4 @@
-# 🎬 GatherWatch
+# 🎬 Gather&Watch
 
 **Watch Together, Plan Seamlessly**
 

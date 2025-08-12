@@ -1,0 +1,7 @@
+# Ignore this files and folders when using Prettier
+.github/
+logs/
+node_modules/
+package-lock.json
+README.md
+LICENSE

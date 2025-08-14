@@ -83,42 +83,21 @@ A social movie night scheduler with real-time watch party experience. Create roo
    cp .env.example .env
    ```
    
-   Fill in your environment variables in `.env`:
-   ```env
-   # Supabase
-   NEXT_PUBLIC_SUPABASE_URL="your-supabase-project-url"
-   NEXT_PUBLIC_SUPABASE_ANON_KEY="your-supabase-anon-key"
-   SUPABASE_SERVICE_ROLE_KEY="your-supabase-service-role-key"
-   SUPABASE_PROJECT_ID="your-supabase-project-id"
-   
-   # Ably (Real-time messaging)
-   NEXT_PUBLIC_ABLY_API_KEY="your-ably-api-key"
-   
-   # Google OAuth (optional)
-   GOOGLE_CLIENT_ID="your-google-client-id"
-   GOOGLE_CLIENT_SECRET="your-google-client-secret"
-   
-   # TMDB API
-   TMDB_API_KEY="your-tmdb-api-key"
-   TMDB_ACCESS_TOKEN="your-tmdb-access-token"
-   
-   # OpenAI (Optional)
-   OPENAI_API_KEY="your-openai-api-key"
-   ```
+   Fill in your environment variables in `.env`. See [Setup Requirements](#setup-requirements) for details.
 
 4. **Set up the database**
+
+   _You only need to do this once per new Supabase project or when resetting your database._
+
    ```bash
    # Set up Supabase CLI (optional but recommended)
-   npm install -g supabase
+   npm install supabase --save-dev
 
-   # Login to Supabase
-   supabase login
-
-   # Initialize Supabase in your project
-   supabase init
+   # Login to Supabase and initialize project (one-time setup)
+   npm run db:setup
 
    # Apply database schema
-   supabase db push
+   npm run db:push
 
    # Generate TypeScript types
    npm run db:types
@@ -126,6 +105,11 @@ A social movie night scheduler with real-time watch party experience. Create roo
    # Seed with demo data (optional)
    npm run db:seed
    ```
+
+   If you encounter connection errors with `npm run db:push`, it's likely due to direct connection which is not compatible with IPv4. Try the following command instead. You can find the URL in your Supabase "Connect to Project" section as well. For seeding, add `--include-seed` flag.
+   ```bash
+   npx supabase db push --db-url "postgresql://postgres.<PROJECT_ID>:<DATABASE_PASSWORD>@aws-1-us-west-1.pooler.supabase.com:5432/postgres"
+   ``` 
 
 5. **Start the development server**
    ```bash
@@ -138,30 +122,30 @@ A social movie night scheduler with real-time watch party experience. Create roo
 
 ## Setup Requirements
 
-### Supabase Setup
+### Supabase
 1. Create account at [supabase.com](https://supabase.com)
-2. Create new project named `gatherwatch`
-3. Go to Authentication > Settings and enable email auth
-4. For Google OAuth: Authentication > Providers > Enable Google
-5. Create Storage buckets: `avatars` and `room-images` (both public)
-6. Copy your project URL, anon key, service role key, and project ID to `.env`
+2. Create a organization if needed
+3. Create a new project named `Gather&Watch`
+4. Go to Authentication > Sign In / Providers and enable email auth
+   - For Google OAuth: Enable Google. See [Supabase Docs](https://supabase.com/docs/guides/auth/social-login/auth-google).
+6. Create Storage buckets: `avatars` and `room-images` (both public)
+7. Copy your project URL, anon key, service role key, and project ID to `.env`
 
-### Ably Setup
+### Ably
 1. Create account at [ably.com](https://ably.com)
 2. Create new app
 3. Copy API key to `.env` as `NEXT_PUBLIC_ABLY_API_KEY`
 
-### TMDB API (Required)
+### TMDB API
 1. Create account at [themoviedb.org](https://www.themoviedb.org/)
 2. Go to Settings > API and request API key
 3. Add both API key and access token to `.env`
 
-### Google OAuth (Optional)
-1. Go to [Google Cloud Console](https://console.cloud.google.com/)
-2. Create project and enable Google+ API
-3. Create OAuth 2.0 credentials
-4. Add redirect URIs: `http://localhost:3000/auth/callback` (dev), `https://yourdomain.com/auth/callback` (prod)
-5. Add client ID and secret to both `.env` and Supabase Auth settings
+### Open AI (Optional)
+1. Sign up or log in at [OpenAI Platform](https://platform.openai.com/)
+2. Go to [API Keys](https://platform.openai.com/api-keys)
+3. Click "Create new secret key"
+4. Copy the key and add it to your `.env` as `OPENAI_API_KEY`
 
 
 
@@ -273,7 +257,7 @@ The app supports:
 
 ### Creating a Room
 
-1. Sign up with email/password or sign in with Google
+1. Sign up and sign in
 2. Click "Create Room" on the dashboard
 3. Set room name, description, and privacy settings
 4. Share the invite code with friends
